@@ -1,4 +1,3 @@
-book = "books/frankenstein.txt"
 
 def get_book_text(filepath):
     # opens the file
@@ -19,7 +18,7 @@ def count_words(file_contents):
     # returns the number of words in the list
     return f"Found {total_words} total words"
 
-def display_words_to_screen():
+def display_words_to_screen(book):
     # uses first function
     read_book = get_book_text(book)
 
@@ -29,7 +28,7 @@ def display_words_to_screen():
     # prints to console
     print(word_count)
 
-def num_times_each_char():
+def num_times_each_char(book):
     my_dict = {}
     # takes text from book as string then
     # returns the number of times each char
@@ -52,8 +51,8 @@ def num_times_each_char():
 
     return my_dict
 
-def sort_them():
-    char_dict = num_times_each_char()
+def sort_them(book):
+    char_dict = num_times_each_char(book)
     chars_list = list()
     #print(chars_list)
     # print(char_dict)

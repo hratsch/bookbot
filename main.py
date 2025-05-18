@@ -1,19 +1,30 @@
-from stats import display_words_to_screen, sort_them, book  
+#from stats import display_words_to_screen, sort_them  
+from stats import *
+import sys
 
 def main():
-    # start of report
-    print("============ BOOKBOT ============")
-    print(f"Analyzing book found at {book}...")
-    print("----------- Word Count ----------")
-    display_words_to_screen()
-    print("--------- Character Count -------")
-    sorted_chars = sort_them()
-    for char_d in sorted_chars:
+    # requires arg before executing code
+    if len(sys.argv) == 2:
+        book = sys.argv[1]
 
-        char = char_d["char"]
-        count = char_d["num"]
+        # start of report
+        print("============ BOOKBOT ============")
+        print(f"Analyzing book found at {book}...")
+        print("----------- Word Count ----------")
+        display_words_to_screen(book)
+        print("--------- Character Count -------")
+        sorted_chars = sort_them(book)
+        for char_d in sorted_chars:
 
-        print(f"{char}: {count}")
-    print("============= END ===============")
+            char = char_d["char"]
+            count = char_d["num"]
+
+            print(f"{char}: {count}")
+        print("============= END ===============")
+        # end of report
+
+    else:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
 
 main()
