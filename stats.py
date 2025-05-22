@@ -35,12 +35,10 @@ def num_times_each_char(book):
 
     # display the book
     bts = get_book_text(book)
-    #print(bts)
 
     # count every single character in book
     # and make lowercase
     for character in bts:
-        #print(character.lower())
 
         key = character.lower()
 
@@ -54,14 +52,11 @@ def num_times_each_char(book):
 def sort_them(book):
     char_dict = num_times_each_char(book)
     chars_list = list()
-    #print(chars_list)
-    # print(char_dict)
+    
     for char, count in char_dict.items():
-        # print(char, count)
+
         if char.isalpha():
             chars_list.append({"char": char, "num": count})
-        #print(char, count)
-    #print(chars_list)
 
     def sort_on(dict):
         return dict["num"]

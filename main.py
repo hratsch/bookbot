@@ -1,4 +1,3 @@
-#from stats import display_words_to_screen, sort_them  
 from stats import *
 import sys
 
